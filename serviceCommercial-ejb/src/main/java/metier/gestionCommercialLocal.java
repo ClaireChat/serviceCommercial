@@ -18,4 +18,6 @@ public interface gestionCommercialLocal {
     public String verfiForm(demandes dem);
     
     public String DemandeFormation(String content);
+    
+    public String CompteRendu(String content);
 }

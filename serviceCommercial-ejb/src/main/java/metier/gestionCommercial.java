@@ -70,5 +70,11 @@ public class gestionCommercial implements gestionCommercialLocal {
 
         return verfiForm(dem);
     }     
+    
+    @Override
+    public String CompteRendu(String content){
+        logDansJMS.sendCR(content);
+        return "Compte rendu bien envoyé";
+    }  
      
 }

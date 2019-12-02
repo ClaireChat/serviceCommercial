@@ -28,5 +28,10 @@ public class servicesCommercial implements servicesCommercialLocal {
         return gestionCom.DemandeFormation(content);
     }
     
+    @Override
+    public String CompteRendu(String content){
+        return gestionCom.CompteRendu(content);
+    }
+    
     
 }

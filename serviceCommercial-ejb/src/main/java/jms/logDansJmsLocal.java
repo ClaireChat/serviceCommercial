@@ -15,4 +15,5 @@ import javax.ejb.Local;
 public interface logDansJmsLocal {
     
     public void sendLog(String formation);
+    public void sendCR(String formation);
 }

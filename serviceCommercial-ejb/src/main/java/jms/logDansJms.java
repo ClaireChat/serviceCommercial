@@ -109,6 +109,71 @@ public class logDansJms implements logDansJmsLocal {
              }
          }
      }
+    }
+    
+    @Override
+    public void sendCR(String formation) {
+    destName = "commercialEntreprise";
+
+    try {
+         // create the JNDI initial context.
+         context = new InitialContext();
+
+         // look up the ConnectionFactory
+         factory = (ConnectionFactory) context.lookup(factoryName);
+
+         // look up the Destination
+         dest = (Destination) context.lookup(destName);
+
+         // create the connection
+         connection = factory.createConnection();
+
+         // create the session
+         session = connection.createSession(
+             false, Session.AUTO_ACKNOWLEDGE);
+
+         // create the sender
+         sender = session.createProducer(dest);
+
+         // start the connection, to enable message sends
+         connection.start();
+
+       
+           
+            text = formation ;
+            TextMessage message = session.createTextMessage();
+            message.setText(text);
+            sender.send(message);
+            System.out.println(formation);
+            System.out.println(message.getText());
+            System.out.println();
+            text = "";
+    
+        
+
+     } catch (JMSException exception) {
+         exception.printStackTrace();
+     } catch (NamingException exception) {
+         exception.printStackTrace();
+     } finally {
+         // close the context
+         if (context != null) {
+             try {
+                 context.close();
+             } catch (NamingException exception) {
+                 exception.printStackTrace();
+             }
+         }
+
+         // close the connection
+         if (connection != null) {
+             try {
+                 connection.close();
+             } catch (JMSException exception) {
+                 exception.printStackTrace();
+             }
+         }
+     }
  }
     
 }

@@ -69,6 +69,15 @@ public class CommercialResource {
         //System.out.print(id);
         return servicesCommercial.DemandeFormation(content);        
     }
+    
+    @Path("CR")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public String compteRendu(String content) {
+        //return Response.ok(gson.toJson(patri.ajouterSalle(id))).build();
+        //System.out.print(id);
+        return servicesCommercial.CompteRendu(content);
+    }
 
     private services.servicesCommercialLocal lookupservicesCommercialLocal() {
         try {

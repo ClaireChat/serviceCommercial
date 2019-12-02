@@ -15,4 +15,6 @@ import javax.ejb.Local;
 public interface servicesCommercialLocal {
     
    public String DemandeFormation(String content);
+   
+    public String CompteRendu(String content);
 }
