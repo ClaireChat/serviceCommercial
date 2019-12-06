@@ -1,8 +1,0 @@
-services\servicesCommercial.class
-jms\jmsTopic.class
-metier\gestionCommercial.class
-jms\logDansJms.class
-jms\logDansJmsLocal.class
-services\servicesCommercialLocal.class
-metier\gestionCommercialLocal.class
-entite\demandes.class
