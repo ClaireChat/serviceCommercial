@@ -11,36 +11,46 @@ package entite;
  */
 public class demandes {
     
-    
+    private String codeClient;
     private String idFormation;
     private int numEffectif;
 
-    public demandes(String idFormation, int numEffectif) {
+    public demandes(String codeClient, String idFormation, int numEffectif) {
+        this.codeClient = codeClient;
         this.idFormation = idFormation;
         this.numEffectif = numEffectif;
     }
 
-    public void setIdFormation(String idFormation) {
-        this.idFormation = idFormation;
+    public String getCodeClient() {
+        return codeClient;
     }
 
-    public void setNumEffectif(int numEffectif) {
-        this.numEffectif = numEffectif;
+    public void setCodeClient(String codeClient) {
+        this.codeClient = codeClient;
     }
 
     public String getIdFormation() {
         return idFormation;
     }
 
+    public void setIdFormation(String idFormation) {
+        this.idFormation = idFormation;
+    }
+
     public int getNumEffectif() {
         return numEffectif;
     }
 
-    @Override
-    public String toString() {
-        return "{" + "idFormation:" + idFormation + ", numEffectif:" + numEffectif + '}';
+    public void setNumEffectif(int numEffectif) {
+        this.numEffectif = numEffectif;
     }
 
+    @Override
+    public String toString() {
+        return "{idFormation:" + idFormation + ", numEffectif:" + numEffectif + ", codeClient:" + codeClient+'}';
+    }
+
+   
     
     
     
