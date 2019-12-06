@@ -79,9 +79,6 @@ public class logDansJms implements logDansJmsLocal {
             TextMessage message = session.createTextMessage();
             message.setText(text);
             sender.send(message);
-            System.out.println(formation);
-            System.out.println(message.getText());
-            System.out.println();
             text = "";
     
         
@@ -144,9 +141,7 @@ public class logDansJms implements logDansJmsLocal {
             TextMessage message = session.createTextMessage();
             message.setText(text);
             sender.send(message);
-            System.out.println(formation);
-            System.out.println(message.getText());
-            System.out.println();
+           
             text = "";
     
         
